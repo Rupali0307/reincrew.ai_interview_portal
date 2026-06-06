@@ -1,0 +1,45 @@
+/* style.css – shared premium stylesheet */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0d1121, #1b2c55);
+  color: #e0e6f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 40px;
+  width: 360px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+.google-btn {
+  background: #4285f4;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s, background 0.2s;
+}
+.google-btn:hover {
+  background: #3267d6;
+  transform: scale(1.03);
+}
+.google-btn img {
+  width: 20px;
+}

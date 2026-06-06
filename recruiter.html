@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReinCrew.ai – Recruiter Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="recruiter.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <!-- Top Header Navigation -->
+        <div class="header">
+            <h1>Recruiter Dashboard</h1>
+            <div class="header-actions">
+                <button class="invite-btn" id="openInviteModalBtn">Invite Candidate</button>
+                <button class="logout-btn" id="logoutBtn">Logout</button>
+            </div>
+        </div>
+
+        <!-- Section Navigation Tabs -->
+        <div class="tabs-container">
+            <button class="tab-btn active" id="candidatesTabBtn" data-tab="candidates">Candidates List</button>
+            <button class="tab-btn" id="schedulesTabBtn" data-tab="schedules">Scheduled Interviews</button>
+        </div>
+
+        <!-- Candidates Tab Panel -->
+        <div id="candidatesPanel">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search candidate by name...">
+            </div>
+            <div id="candidateContainer" class="candidates-grid">
+                <!-- Populated by recruiter.js -->
+            </div>
+        </div>
+
+        <!-- Schedules Tab Panel (Hidden by default) -->
+        <div id="schedulesPanel" style="display: none;">
+            <div class="schedule-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Candidate</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Scheduled Date & Time</th>
+                            <th>Details / Notes</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schedulesTableBody">
+                        <!-- Populated by recruiter.js -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 1. View Candidate Interviews Modal -->
+        <div id="interviewModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" id="closeViewModal">&times;</span>
+                <h2 id="modalTitle">Candidate Interviews</h2>
+                <div id="interviewList">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Invite Candidate Modal -->
+        <div id="inviteModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" id="closeInviteModal">&times;</span>
+                <h2>Invite Candidate</h2>
+                <form id="inviteForm">
+                    <div class="form-group">
+                        <label for="inviteName">Candidate Name</label>
+                        <input type="text" id="inviteName" required placeholder="Enter candidate name">
+                    </div>
+                    <div class="form-group">
+                        <label for="inviteEmail">Candidate Email</label>
+                        <input type="email" id="inviteEmail" required placeholder="candidate@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="inviteDate">Scheduled Date & Time</label>
+                        <input type="datetime-local" id="inviteDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inviteNotes">Recruiter Notes / Meeting Link</label>
+                        <textarea id="inviteNotes" rows="3" placeholder="Meeting details, guidelines, or video conference link"></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn" id="cancelInviteBtn">Cancel</button>
+                        <button type="submit" class="submit-btn" id="submitInviteBtn">Create Schedule</button>
+                    </div>
+                </form>
+
+                <!-- Invitation Copy link box (Appears on Success) -->
+                <div class="invite-link-container" id="inviteLinkContainer">
+                    <h4>✓ Invitation Created!</h4>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 10px;">Provide this invite link to the candidate so they can join and complete their session:</p>
+                    <div class="invite-link-row">
+                        <input type="text" class="invite-link-input" id="inviteLinkInput" readonly>
+                        <button class="copy-btn" id="copyLinkBtn">Copy Link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Reschedule Interview Modal -->
+        <div id="rescheduleModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" id="closeRescheduleModal">&times;</span>
+                <h2>Reschedule Interview</h2>
+                <form id="rescheduleForm">
+                    <input type="hidden" id="rescheduleInterviewId">
+                    <div class="form-group">
+                        <label for="rescheduleDate">New Date & Time</label>
+                        <input type="datetime-local" id="rescheduleDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rescheduleNotes">Updated Notes / Meeting Details</label>
+                        <textarea id="rescheduleNotes" rows="3" placeholder="Updated instructions or link"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn" id="cancelRescheduleBtn">Cancel</button>
+                        <button type="submit" class="submit-btn">Update Schedule</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="recruiter.js"></script>
+
+</body>
+</html>

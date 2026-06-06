@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReinCrew.ai – Landing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0d1121, #1b2c55);
+      color: #e0e6f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container {
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #ffffff;
+    }
+    .google-btn {
+      background: #4285f4;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.2s;
+    }
+    .google-btn:hover {
+      transform: scale(1.03);
+    }
+    .google-btn img {
+      width: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to ReinCrew.ai</h1>
+    <button id="googleLoginBtn" class="google-btn">
+      <img src="https://www.google.com/favicon.ico" alt="Google" />
+      Continue with Google
+    </button>
+    <div style="margin-top: 25px;">
+      <a href="onboard-company.html" style="color: #60a5fa; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='#93c5fd'" onmouseout="this.style.color='#60a5fa'">
+        Are you an employer? Onboard your Company
+      </a>
+    </div>
+  </div>
+  <script type="module" src="./index.js"></script>
+</body>
+</html>

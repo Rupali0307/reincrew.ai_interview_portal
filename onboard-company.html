@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReinCrew.ai – Onboard your Company</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #0d1121, #1b2c55);
+      font-family: 'Inter', sans-serif;
+      color: #e0e6f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .container {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 40px;
+      width: 400px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    
+    .subtitle {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+    
+    .form-group {
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #cbd5e1;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    
+    input:focus {
+      outline: none;
+      border-color: #3b82f6;
+    }
+    
+    .primary-btn {
+      background: #3b82f6;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      width: 100%;
+      transition: background 0.2s, transform 0.1s;
+    }
+    
+    .primary-btn:hover {
+      background: #2563eb;
+    }
+    
+    .primary-btn:disabled {
+      background: #6b7280;
+      cursor: not-allowed;
+    }
+    
+    .google-btn {
+      background: #4285f4;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      transition: transform 0.2s, background 0.2s;
+    }
+    
+    .google-btn:hover {
+      background: #3267d6;
+    }
+    
+    .google-btn img {
+      width: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="onboardContainer">
+    <h1>Onboard your Company</h1>
+    <p class="subtitle">Setting up ReinCrew.ai for your recruiting team.</p>
+    
+    <div id="authStep">
+      <p class="subtitle">Please sign in with Google first to create your recruiter account.</p>
+      <button id="googleBtn" class="google-btn">
+        <img src="https://www.google.com/favicon.ico" alt="Google" />
+        Continue with Google
+      </button>
+    </div>
+    
+    <div id="onboardStep" style="display: none;">
+      <form id="onboardForm">
+        <div class="form-group">
+          <label for="companyName">Company Name</label>
+          <input type="text" id="companyName" required placeholder="e.g. Acme Corp">
+        </div>
+        <button type="submit" class="primary-btn" id="submitBtn">Complete Onboarding</button>
+      </form>
+    </div>
+  </div>
+  
+  <script type="module" src="./onboard-company.js"></script>
+</body>
+</html>
